@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        margin: 10px;
+    }
+
+    .tiles {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tile {
+        position: relative;
+        height: 500px;
+        width: 25%;
+        background-color: red;
+        margin: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        transition-property: all;
+        transition-duration: 500ms;
+    }
+
+    .tile::after {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        background-color: black;
+        height: 500px;
+        width: 0;
+        border-radius: 10px;
+        opacity: 0.3;
+        animation-name: BlackOuter;
+        animation-duration: 1.2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes BlackOuter {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    .tile:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 11px 10px rgb(99, 98, 98);
+
+
+    }
+
+    .tile1 {
+        background: url('7.jpg') no-repeat center center/cover;
+
+    }
+
+    .tile2 {
+        background: url('9.jpg') no-repeat center center/cover;
+
+    }
+
+    .tile3 {
+        background: url('13.jpg') no-repeat center center/cover;
+
+    }
+
+    .tile4 {
+        background: url('16.jpg') no-repeat center center/cover;
+
+    }
+
+    .gamehead {
+        margin-top: 450px;
+        position: relative;
+        bottom: 0;
+        color: white;
+        transition-property: all;
+        transition-duration: 400ms;
+        z-index: 2;
+    }
+
+    .gamehead:hover {
+        margin-top: 448px;
+        cursor: pointer;
+        color: red;
+    }
+</style>
+
+<body>
+    <h1>Tiles</h1>
+    <div class="tiles">
+        <div class="tile tile1">
+            <h2 class="gamehead">Battlefield 4</h2>
+        </div>
+        <div class="tile tile2">
+            <h2 class="gamehead">God Of War</h2>
+        </div>
+        <div class="tile tile3">
+            <h2 class="gamehead">Watch Dogs</h2>
+        </div>
+        <div class="tile tile4">
+            <h2 class="gamehead">Skyrim</h2>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const tile = document.querySelector('.tile');
+</script>
+
+</html>
